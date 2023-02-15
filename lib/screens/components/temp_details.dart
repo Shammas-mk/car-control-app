@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_adjacent_string_concatenation
+
 import 'package:flutter/material.dart';
 import 'package:tesla_control_app/constanins.dart';
 import 'package:tesla_control_app/controllers/home_controller.dart';
@@ -33,13 +35,13 @@ class TempDetails extends StatelessWidget {
                   isActive: !_controller.isCoolSelected,
                   press: _controller.updateCoolSelectedTab,
                   svgSrc: 'assets/icons/heatShape.svg',
-                  ActiveColor: redColor,
+                  activeColor: redColor,
                   title: 'Heat',
                 ),
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Column(
             children: [
               IconButton(
@@ -48,14 +50,14 @@ class TempDetails extends StatelessWidget {
                   _controller.level++;
                   _controller.updateLevel();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_drop_up,
                   size: 48,
                 ),
               ),
               Text(
                 "${_controller.level}" + "\u2103",
-                style: TextStyle(fontSize: 80),
+                style: const TextStyle(fontSize: 80),
               ),
               IconButton(
                 padding: EdgeInsets.zero,
@@ -63,14 +65,14 @@ class TempDetails extends StatelessWidget {
                   _controller.level--;
                   _controller.updateLevel();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_drop_down,
                   size: 48,
                 ),
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Text("Current Temperature".toUpperCase()),
           const SizedBox(height: defaultPadding),
           Row(
@@ -95,7 +97,7 @@ class TempDetails extends StatelessWidget {
                   ),
                   Text(
                     "${_controller.outside + _controller.level}" + "\u2103",
-                    style: TextStyle(color: Colors.white54),
+                    style: const TextStyle(color: Colors.white54),
                   )
                 ],
               ),

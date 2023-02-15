@@ -15,19 +15,19 @@ class BatteryStatus extends StatelessWidget {
           "220 mi",
           style: Theme.of(context)
               .textTheme
-              .headline3!
+              .displaySmall!
               .copyWith(color: Colors.white),
         ),
-        Text(
+        const Text(
           "61%",
           style: TextStyle(fontSize: 24),
         ),
-        Spacer(),
+        const Spacer(),
         Text(
           "Charging".toUpperCase(),
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
         ),
-        Text(
+        const Text(
           "18 min remaining",
           style: TextStyle(fontSize: 20),
         ),
@@ -35,10 +35,10 @@ class BatteryStatus extends StatelessWidget {
           height: constraints.maxHeight * 0.14,
         ),
         DefaultTextStyle(
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text("22 mi/hr"),
               Text("222 v"),
             ],

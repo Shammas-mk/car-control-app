@@ -26,10 +26,10 @@ class DoorLock extends StatelessWidget {
         child: isLock
             ? SvgPicture.asset(
                 'assets/icons/door_lock.svg',
-                key: ValueKey("lock"),
+                key: const ValueKey("lock"),
               )
             : SvgPicture.asset('assets/icons/door_unlock.svg',
-                key: ValueKey("unlock")),
+                key: const ValueKey("unlock")),
       ),
     );
   }

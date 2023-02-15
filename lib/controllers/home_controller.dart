@@ -44,12 +44,13 @@ class HomeController extends ChangeNotifier {
 
   void showTyresController(int index) {
     if (selectedBotonTab != 3 && index == 3) {
-      Future.delayed(Duration(milliseconds: 400), () {
+      Future.delayed(const Duration(milliseconds: 400), () {
         isShowTyres = true;
         notifyListeners();
       });
-    } else
+    } else {
       isShowTyres = false;
+    }
     notifyListeners();
   }
 
@@ -57,15 +58,16 @@ class HomeController extends ChangeNotifier {
 
   void showTyreStatusController(int index) {
     if (selectedBotonTab != 3 && index == 3) {
-      Future.delayed(Duration(milliseconds: 400), () {
+      Future.delayed(const Duration(milliseconds: 400), () {
         isShowTyreStatus = true;
         notifyListeners();
       });
-    } else
-      Future.delayed(Duration(milliseconds: 800), () {
+    } else {
+      Future.delayed(const Duration(milliseconds: 800), () {
         isShowTyreStatus = false;
         notifyListeners();
       });
+    }
   }
 
   int level = 18;
@@ -75,7 +77,6 @@ class HomeController extends ChangeNotifier {
 
   void insideLevelvalue() {
     insideLevel = level;
-    print("this is the valu in insideLevelvalue $insideLevel");
     notifyListeners();
   }
 
@@ -86,9 +87,8 @@ class HomeController extends ChangeNotifier {
   }
 
   void updatedinsideLevelvalue() async {
-    await Future.delayed(Duration(seconds: 7), () {
+    await Future.delayed(const Duration(seconds: 7), () {
       updatedinsideLevel = level;
-      print("$updatedinsideLevel");
     });
     notifyListeners();
   }
