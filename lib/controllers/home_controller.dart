@@ -92,4 +92,12 @@ class HomeController extends ChangeNotifier {
     });
     notifyListeners();
   }
+
+  bool connectedDevice = false;
+  updateConnectedDeviceValue() async {
+    await Future.delayed(const Duration(seconds: 7), () {
+      connectedDevice = !connectedDevice;
+    });
+    notifyListeners();
+  }
 }
