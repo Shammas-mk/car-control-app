@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tesla_control_app/constanins.dart';
@@ -12,14 +14,14 @@ import 'package:tesla_control_app/screens/components/tyres.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  HomeController _controller = HomeController();
+  final HomeController _controller = HomeController();
   late AnimationController _batteryAnimationController;
   late Animation<double> _animationBattery;
   late Animation<double> _animationBatteryStatus;
@@ -138,22 +140,26 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         return Scaffold(
           bottomNavigationBar: TeslaBottomNavBar(
             onTap: (index) {
-              if (index == 1)
+              if (index == 1) {
                 _batteryAnimationController.forward();
-              else if (_controller.selectedBotonTab == 1 && index != 1)
+              } else if (_controller.selectedBotonTab == 1 && index != 1) {
                 _batteryAnimationController.reverse(from: 0.7);
+              }
 
-              if (index == 2)
+              if (index == 2) {
                 _tempAnimationController.forward();
-              else if (_controller.selectedBotonTab == 2 && index != 2)
+              } else if (_controller.selectedBotonTab == 2 && index != 2) {
                 _tempAnimationController.reverse(from: 0.4);
+              }
 
-              if (index == 3)
+              if (index == 3) {
                 _tyreAnimationController.forward();
-              else if (_controller.selectedBotonTab == 3 && index != 3)
+              } else if (_controller.selectedBotonTab == 3 && index != 3) {
                 _tyreAnimationController.reverse();
+              }
 
               _controller.showTyresController(index);
+
               _controller.showTyreStatusController(index);
 
               _controller.onBottomNavTabChange(index);
